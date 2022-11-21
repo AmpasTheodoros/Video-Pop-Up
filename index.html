@@ -7,25 +7,25 @@
 </head>
 <body>
     <div id="mybutton">
-        <button class="feedback" onclick="openPopup()">Feedback</button>
+        <button class="feedback" id="button">Feedback</button>
     </div>
-    <div class="container">
-        <div class="popup" id="popup">
-            <img src="404-tick.png">
-            <h2>Thank you</h2>
-            <p>Your details has been successfully submitted. Thanks!</p>
-            <button class="button" onclick="closePopup()">ok</button>
+    <div class="bg-modal">
+        <div class="modal-contents">
+            <div class="close">+</div>
+            <iframe width="420" height="315"
+                    src="https://www.youtube.com/embed/tgbNymZ7vqY">
+            </iframe>
+            <button>Koumpi</button>
         </div>
     </div>
-<script>
-    let popup = document.getElementById("popup");
+    <script>
+        document.getElementById('button').addEventListener("click", function() {
+            document.querySelector('.bg-modal').style.display = "flex";
+        });
 
-    function openPopup(){
-        popup.classList.add("open-popup");
-    }
-    function closePopup(){
-        popup.classList.remove("open-popup")
-    }
-</script>
+        document.querySelector('.close').addEventListener("click", function() {
+            document.querySelector('.bg-modal').style.display = "none";
+        });
+    </script>
 </body>
 </html>
